@@ -1,0 +1,3 @@
+Dog Sasha 10 5 4
+This is an incorrect data file.
+What am I supposed to do?

@@ -1,0 +1,49 @@
+// File: aSPaa.txt
+// Data file for SeaPort projects
+// Date: Sat Jul 09 22:51:16 EDT 2016
+// parameters: 1 1 5 5 1 5
+//   ports, docks, pships, cships, jobs, persons
+
+// port   name index parent(null)
+//    port   <string> <int> <int>
+port Lanshan 10000 0
+port Athens 10001 0
+
+// dock   name index parent(port)
+//    dock   <string> <int> <int>
+dock Pier_0 20000 10000 30000
+dock Pier_1 20001 10001 30001
+
+// pship  name index parent(dock/port) weight length width draft numPassengers numRooms numOccupied
+//    pship  <string> <int> <int> <double> <double> <double> <double> <int> <int> <int>
+pship           Gallinules 30000 20000 125.99 234.70 60.67 37.14 746 246 246
+pship                Ashen 30001 20001 81.96 451.08 98.07 21.39 2045 623 623
+
+// cship  name index parent(dock/port) weight length width draft cargoWeight cargoVolume cargoValue
+//    cship  <string> <int> <int> <double> <double> <double> <double> <double> <double> <double>
+cship            Erosional 40000 10000 200.80 242.33 38.31 23.49 172.73 188.54 235.57
+cship            Isomerize 40001 10001 111.30 398.53 31.40 26.13 206.26 162.84 762.96
+
+// person name index parent skill
+//    person <string> <int> <int> <string>
+person                 Sara 50000 10000 electrician
+person                Duane 50001 10000 inspector
+person                Betsy 50002 10000 cleaner
+person               Archie 50003 10000 captain
+person               Thomas 50004 10001 clerk
+person                 Tina 50005 10001 fisherman
+person                Joann 50006 10001 craneOperator
+person                  Ira 50007 10001 painter
+
+// job    name index parent duration [skill]+ (one or more, matches skill in person, may repeat)
+// job    <string> <int> <int> <double> [<string>]+
+job   Job_1 60001 30000 6.45 electrician inspector
+job   Job_2 60002 30000 9.96 electrician
+job   Job_3 60003 30000 8.29 inspector
+job   Job_4 60004 40000 11.47 captain
+
+job   Job_5 60001 30001 7.45 clerk
+job   Job_6 60002 30001 9.96 clerk fisherman
+job   Job_7 60003 30001 8.29 painter
+job   Job_8 60004 40001 11.47 janitor
+
